@@ -1,0 +1,7 @@
+__UI
+node_modules
+build
+.DS_Store
+.vscode
+.idea
+*-debug.log

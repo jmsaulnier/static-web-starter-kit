@@ -1,0 +1,39 @@
+{
+  "presets": [
+    "react",
+    ["env", {
+      "targets": {
+        "browsers": ["last 2 versions"]
+      }
+    }]
+  ],
+  "plugins": [
+    ["transform-runtime", {
+      "helpers": false,
+      "polyfill": false,
+      "regenerator": true,
+      "moduleName": "babel-runtime"
+    }],
+    ["transform-object-rest-spread"],
+    ["transform-async-to-generator"],
+    ["transform-class-properties"],
+
+    ["react-hot-loader/babel"], // Enables React code to work with HMR.
+
+    ["module-resolver", {
+      "root": ["."],
+      "alias": {
+        "src": "./src"
+      }
+    }]
+  ],
+
+  "env": {
+    "development": {
+      "presets": []
+    },
+    "production": {
+      "presets": ["react-optimize"]
+    }
+  }
+}
