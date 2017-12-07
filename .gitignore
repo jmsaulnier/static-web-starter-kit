@@ -1,6 +1,7 @@
 __UI
 node_modules
 build
+localhost.pem
 .DS_Store
 .vscode
 .idea

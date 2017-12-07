@@ -1,2 +1,3 @@
 build
 postcss.config.js
+registerServiceWorker.js
