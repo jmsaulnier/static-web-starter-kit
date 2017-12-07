@@ -27,11 +27,13 @@ module.exports = {
 			'react-router-dom',
 			'preloader'
 			],
-    app: [
-			'react-hot-loader/patch', // activate HMR for React
+    app: ENV==='production' ? [
+			'./src/index.js'
+		] : [
+      'react-hot-loader/patch', // activate HMR for React
 			'webpack-dev-server/client?http://localhost:8080',
 			'./src/index.js'
-		]
+    ]
 	},
 
 	output: {
