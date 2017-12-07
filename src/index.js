@@ -12,26 +12,20 @@ import App from './sections/App';
 domready(() => {
   const store = configureStore();
 
-  const render = () => {
-    ReactDOM.render(
-      <AppContainer>
-        <Provider store={store}>
-          <Router>
-            <Route path="/" component={App} />
-          </Router>
-        </Provider>
-      </AppContainer>,
-      document.getElementById('app'),
-    );
-  };
-
-  render(App, store);
+  ReactDOM.render(
+    <AppContainer>
+      <Provider store={store}>
+        <Router>
+          <Route path="/" component={App} />
+        </Router>
+      </Provider>
+    </AppContainer>,
+    document.getElementById('app'),
+  );
 
   if (process.env.NODE_ENV !== 'production') {
     if (module.hot) {
-      module.hot.accept('./sections/App', () => {
-        render();
-      });
+      module.hot.accept();
     }
   }
 
