@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import Header from './elements/Header';
-import Preloader from './elements/Preloader';
 
-import HomePage from 'src/sections/HomePage';
-import ContactPage from 'src/sections/ContactPage';
+import Home from 'src/sections/Home';
+import Contact from 'src/sections/Contact';
+import NotFound from 'src/sections/NotFound';
 
 import styles from './App.css';
 
@@ -30,34 +30,14 @@ export default class App extends Component {
 
   constructor(props, context) {
     super(props, context);
-    this.state = {
-      isPreloaderLoaded: false,
-      isPreloaderHidden: false,
-    };
+    this.state = {};
 
-    window.addEventListener('resize',
-      debounce(() => props.windowResize(window.innerWidth, window.innerHeight), 200)
+    window.addEventListener(
+      'resize',
+      debounce(() => props.windowResize(window.innerWidth, window.innerHeight), 200),
     );
 
     props.windowResize(window.innerWidth, window.innerHeight);
-  }
-
-  /**
-   * preloaderLoadedHandler
-   */
-  preloaderLoadedHandler() {
-    this.setState({
-      isPreloaderLoaded: true,
-    });
-  }
-
-  /**
-   * preloaderHiddenHandler
-   */
-  preloaderHiddenHandler() {
-    this.setState({
-      isPreloaderHidden: true,
-    });
   }
 
   /**
@@ -65,24 +45,15 @@ export default class App extends Component {
    * @return {ReactElement} markup
    */
   render() {
-    const { isPreloaderHidden, isPreloaderLoaded } = this.state;
-
     return (
-      <div className={styles.App}>
-        {!isPreloaderHidden && <Preloader
-          onLoaded={() => this.preloaderLoadedHandler()}
-          onHidden={() => this.preloaderHiddenHandler()}
-        />}
-
-        {isPreloaderLoaded && <div>
-          <Header />
-            <div>
-              <Route exact path="/" component={HomePage} />
-              <Route path="/contact" component={ContactPage} />
-            </div>
-        </div>}
-
-      </div>
+      <section className={styles.App}>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/contact" component={Contact} />
+          <Route component={NotFound}/>
+        </Switch>
+      </section>
     );
   }
 }

@@ -1,5 +1,6 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 import styles from './Header.css';
 
@@ -7,19 +8,7 @@ import styles from './Header.css';
  * Header component
  */
 
-export default class Header extends PureComponent {
-
-  static get propTypes() {
-    return {
-      children: PropTypes.element,
-    };
-  }
-
-  static get defaultProps() {
-    return {
-      children: null,
-    };
-  }
+export default class Header extends Component {
 
   /**
    * render
@@ -28,9 +17,18 @@ export default class Header extends PureComponent {
   render() {
     return (
       <header className={styles.Header}>
-        <span className={styles.actions}>
-          {this.props.children}
-        </span>
+        <ul>
+          <li>
+            <NavLink to="/" pathname="/" strict exact activeClassName={styles.isActive}>
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact" strict pathname="/contact" activeClassName={styles.isActive}>
+              Contact
+            </NavLink>
+          </li>
+        </ul>
       </header>
     );
   }

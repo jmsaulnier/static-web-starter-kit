@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 
 import { getStatus } from 'src/api/github';
 
-import styles from './HomePage.css';
+import styles from './Home.css';
 
 /**
- * HomePage section
+ * Home section
  */
-export default class HomePage extends Component {
+export default class Home extends Component {
 
   constructor(props) {
     super(props);
@@ -31,7 +31,7 @@ export default class HomePage extends Component {
    */
   render() {
     return (
-      <section className={styles.HomePage}>
+      <section className={styles.Home}>
         <h1>Allo!</h1>
         <p>You now have:</p>
         <ul>

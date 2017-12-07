@@ -1,26 +1,19 @@
 @import '../../styles/variables.css';
 
-.HomePage {
+.Contact {
   width: 100%;
   text-align: center;
-  color: $palette-tertiary;
-
-  ul {
-    padding: 0;
-  }
-
-  li {
-    display: block;
-    margin: 1em;
-  }
+  color: var(--palette-tertiary);
 
   .navigation {
     padding: 2em 0 0 0;
     text-align: center;
 
     a {
-      color: $palette-secondary;
+      color: var(--palette-secondary);
       text-decoration: none;
     }
   }
 }
+
+

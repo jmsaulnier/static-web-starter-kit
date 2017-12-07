@@ -1,16 +1,30 @@
 @import '../../../../styles/variables.css';
 
 .Header {
-  width: 100%;  
+  width: 100%;
   height: 80px;
-  width: 100%;  
+  width: 100%;
   text-align: center;
   color: #000;
   background: url("/assets/images/yeoman.png") var(--palette-tertiary) no-repeat 5px 5px;
 
-  .actions {
+  ul {
     position: absolute;
     top: 2em;
     right: 1em;
+    list-style-type: none;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 0.3em;
+
+    a {
+      text-decoration: none;
+    }
+
+    .isActive {
+      font-weight: bold;
+    }
   }
 }

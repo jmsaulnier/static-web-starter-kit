@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 
-import styles from './ContactPage.css';
+import styles from './Contact.css';
 
 /**
  * ContactPage component
  */
-export default class ContactPage extends PureComponent {
+export default class Contact extends PureComponent {
 
   /**
    * render
@@ -14,7 +14,7 @@ export default class ContactPage extends PureComponent {
    */
   render() {
     return (
-      <section className={styles.ContactPage}>
+      <section className={styles.Contact}>
         <h2> Contact section!</h2>
         <aside className={styles.navigation}>
           <Link to="/">← Back</Link>

@@ -1,8 +1,8 @@
 export const RESIZE_WINDOW = '@BROWSER/RESIZE_WINDOW';
 
 const initialState = {
-  stageWidth: null,
-  stageHeight: null,
+  stageWidth: 0,
+  stageHeight: 0,
 };
 
 // Reducer

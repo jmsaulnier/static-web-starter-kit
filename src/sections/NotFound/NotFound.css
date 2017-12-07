@@ -1,0 +1,7 @@
+@import '../../styles/variables.css';
+
+.NotFound {
+  width: 100%;
+  text-align: center;
+  color: var(--palette-tertiary);
+}
