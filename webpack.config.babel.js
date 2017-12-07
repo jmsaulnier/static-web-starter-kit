@@ -24,8 +24,7 @@ module.exports = {
 			'react',
 			'react-dom',
 			'react-redux',
-			'react-router-dom',
-			'preloader'
+			'react-router-dom'
 			],
     app: ENV==='production' ? [
 			'./src/index.js'

@@ -97,7 +97,6 @@
     "mkdirp": "^0.5.1",
     "ncp": "^2.0.0",
     "normalize.css": "^7.0.0",
-    "preloader": "^4.0.2",
     "promise": "^8.0.1",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",

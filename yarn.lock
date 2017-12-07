@@ -993,10 +993,6 @@ base64-js@^1.0.2:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.2.1.tgz#a91947da1f4a516ea38e5b4ec0ec3773675e0886"
 
-base64mime@0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/base64mime/-/base64mime-0.0.3.tgz#06e3ed104cc5d1b3dffe667a90430b6878eccacd"
-
 batch@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/batch/-/batch-0.6.1.tgz#dc34314f4e679318093fc760272525f94bf25c16"
@@ -3912,10 +3908,6 @@ js-base64@^2.1.9:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.4.0.tgz#9e566fee624751a1d720c966cd6226d29d4025aa"
 
-js-oop@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/js-oop/-/js-oop-1.0.0.tgz#754fa5c2e4490bdb1f9d30084494371ab70f17a6"
-
 js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
@@ -5384,13 +5376,6 @@ postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.11, postcss@^6.0.13, postcss@^6.0.1
     chalk "^2.3.0"
     source-map "^0.6.1"
     supports-color "^4.4.0"
-
-preloader@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/preloader/-/preloader-4.0.2.tgz#cf5dd97741a51e208e476111fc6e9af2a71832a5"
-  dependencies:
-    base64mime "0.0.3"
-    js-oop "^1.0.0"
 
 prelude-ls@~1.1.2:
   version "1.1.2"
