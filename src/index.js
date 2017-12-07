@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
-import { BrowserRouter, Match } from 'react-router';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import domready from 'domready';
 
 import { configureStore } from './store/configure';
@@ -16,7 +16,9 @@ domready(() => {
     ReactDOM.render(
       <AppContainer>
         <Provider store={store}>
-          <App />
+          <Router>
+            <Route path="/" component={App} />
+          </Router>
         </Provider>
       </AppContainer>,
       document.getElementById('app'),

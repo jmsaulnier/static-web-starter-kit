@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import Header from './elements/Header';
 import Preloader from './elements/Preloader';
@@ -76,12 +76,10 @@ export default class App extends Component {
 
         {isPreloaderLoaded && <div>
           <Header />
-          <BrowserRouter>
             <div>
               <Route exact path="/" component={HomePage} />
               <Route path="/contact" component={ContactPage} />
             </div>
-          </BrowserRouter>
         </div>}
 
       </div>
