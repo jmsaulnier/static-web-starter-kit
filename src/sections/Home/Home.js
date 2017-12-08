@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { TweenLite } from 'gsap';
 
 import { getStatus } from 'src/api/github';
 
@@ -15,6 +16,8 @@ export default class Home extends Component {
     this.state = {
       items: ['HTML5 Boilerplate', 'React.js', '... & more'],
     };
+
+    this.$title = null;
   }
 
   /**
@@ -23,6 +26,14 @@ export default class Home extends Component {
   async componentDidMount() {
     const result = await getStatus();
     console.log(result);
+
+    this.animateIn();
+  }
+
+  animateIn() {
+    TweenLite.to(this.$title, 1, {opacity: 0}).then(function () {
+      console.log('Done animating title');
+    })
   }
 
   /**
@@ -32,7 +43,7 @@ export default class Home extends Component {
   render() {
     return (
       <section className={styles.Home}>
-        <h1>Allo!</h1>
+        <h1 ref={(el) => { this.$title = el; }}>Allo!</h1>
         <p>You now have:</p>
         <ul>
           {this.state.items.map(item => <li key={item}><span> {item}</span></li>)}

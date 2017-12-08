@@ -93,6 +93,8 @@
     "eventsource-polyfill": "^0.9.6",
     "glslify": "^6.1.0",
     "glslify-loader": "^1.0.2",
+    "gsap": "^1.20.3",
+    "gsap-then": "^2.1.1",
     "history": "^4.7.2",
     "ismobilejs": "^0.4.1",
     "lodash.debounce": "^4.0.8",
