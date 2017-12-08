@@ -9,6 +9,7 @@
     "prestart": "npm run build",
     "build": "cross-env NODE_ENV=production webpack --progress",
     "prebuild": "del build && mkdirp build && ncp static build",
+    //"deploy": "npm run build && surge -p ./build --domain https://jmsaulnier-static-web-starter-kit.surge.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -75,6 +76,7 @@
     "shelljs": "^0.7.8",
     "source-map-loader": "^0.2.3",
     "style-loader": "^0.19.0",
+    "sw-precache-webpack-plugin": "^0.11.4",
     "uglifyjs-webpack-plugin": "^1.1.2",
     "url-loader": "^0.6.2",
     "webpack": "^3.10.0",

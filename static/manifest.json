@@ -13,7 +13,15 @@
       }, {
         "src": "assets/images/touch/chrome-touch-icon-192x192.png",
         "sizes": "192x192"
+      },{
+        "src": "assets/images/touch/chrome-touch-icon-256x256.png",
+        "sizes": "256x256"
+      },{
+        "src": "assets/images/touch/chrome-touch-icon-512x512.png",
+        "sizes": "512x512"
       }],
   "start_url": "/index.html?homescreen=1",
-  "display": "standalone"
+  "display": "standalone",
+  "background_color": "#2196F3",
+  "theme_color": "#2196F3"
 }
