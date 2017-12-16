@@ -1,31 +1,44 @@
 {
   "parser": "babel-eslint",
-  "ecmaFeatures": {
-    "classes": true,
-    "jsx": true
+  "plugins": [
+      "react"
+  ],
+  "globals": {
+      "clearInterval": true,
+      "clearTimeout": true,
+      "console": true,
+      "document": true,
+      "navigator": true,
+      "Promise": true,
+      "fetch": true,
+      "setInterval": true,
+      "setTimeout": true,
+      "window": true
   },
   "extends": [
-    "airbnb",
-    "plugin:import/errors",
-    "plugin:import/warnings"
+    "airbnb"
   ],
-  "plugins": [
-    "react"
-  ],
-  "env": {
-    "es6": true,
-    "browser": true,
-    "node": true
+  "rules": {
+    "global-require": [1],
+    "import/extensions": [0],
+    "import/first": [0],
+    "import/no-extraneous-dependencies": [0],
+    "import/prefer-default-export": [0],
+    "import/no-unresolved": [0],
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["to"]
+      }
+    ],
+    "no-console": [0],
+    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+    "react/prefer-stateless-function": [0]
   },
-  "parserOptions": {
-    "ecmaVersion": 7,
-    "sourceType": 'module',
-    "ecmaFeatures": {
-      "jsx": true,
-      "experimentalObjectRestSpread": true
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
     }
-  },
-  rules: {
-    'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.js'] }]
   }
 }

@@ -10,7 +10,6 @@ import styles from './Home.css';
  * Home section
  */
 export default class Home extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -31,9 +30,9 @@ export default class Home extends Component {
   }
 
   animateIn() {
-    TweenLite.to(this.$title, 1, {opacity: 0}).then(function () {
+    TweenLite.to(this.$title, 1, { opacity: 0 }).then(() => {
       console.log('Done animating title');
-    })
+    });
   }
 
   /**

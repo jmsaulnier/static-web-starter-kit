@@ -6,7 +6,6 @@ import styles from './NotFound.css';
  * NotFound component
  */
 export default class NotFound extends PureComponent {
-
   /**
    * render
    * @return {ReactElement} markup

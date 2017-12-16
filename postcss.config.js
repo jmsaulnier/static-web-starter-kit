@@ -16,6 +16,6 @@ module.exports = {
     require('postcss-mixins'),
     require('postcss-for'),
     require('postcss-nested'),
-    require('postcss-random')
-  ]
+    require('postcss-random'),
+  ],
 };

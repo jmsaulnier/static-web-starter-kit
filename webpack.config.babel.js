@@ -14,50 +14,50 @@ const pkg = require('./package.json');
 
 const ENV = process.env.NODE_ENV || 'development';
 
-const CSS_MAPS = ENV!=='production';
+const CSS_MAPS = ENV !== 'production';
 
 module.exports = {
 
-	entry: {
-		vendors: [
+  entry: {
+    vendors: [
       'domready',
       'gsap',
       'gsap-then',
-			'redux',
-			'react',
-			'react-dom',
-			'react-redux',
-			'react-router-dom'
-			],
-    app: ENV==='production' ? [
-			'./src/index.js'
-		] : [
+      'redux',
+      'react',
+      'react-dom',
+      'react-redux',
+      'react-router-dom',
+    ],
+    app: ENV === 'production' ? [
+      './src/index.js',
+    ] : [
       'react-hot-loader/patch', // activate HMR for React
-			'webpack-dev-server/client?http://localhost:8080',
-			'./src/index.js'
-    ]
-	},
+      'webpack-dev-server/client?http://localhost:8080',
+      './src/index.js',
+    ],
+  },
 
-	output: {
-		path: path.resolve(__dirname, "build"),
-		publicPath: '/',
-		filename: ENV==='production' ? '[name].[chunkhash].js' : '[name].js',
-		chunkFilename: '[id].[chunkhash].js',
-	},
+  output: {
+    path: path.resolve(__dirname, 'build'),
+    publicPath: '/',
+    filename: ENV === 'production' ? '[name].[chunkhash].js' : '[name].js',
+    chunkFilename: '[id].[chunkhash].js',
+  },
 
-	module: {
-		rules: [
-			{
+  module: {
+    rules: [
+      {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [
-          path.resolve('src')
+          path.resolve('src'),
         ],
       },
       {
         test: /\.css$/,
-        loader: ENV==='production' ? ExtractTextPlugin.extract({
-          fallback: "style-loader",
+        loader: ENV === 'production' ? ExtractTextPlugin.extract({
+          fallback: 'style-loader',
           use: [
             {
               loader: 'css-loader',
@@ -92,34 +92,34 @@ module.exports = {
       },
       {
         test: /\.jpg$|\.gif$|\.png$|\.woff$|\.woff2$|\.ttf$|\.svg$|\.eot$|\.wav$|\.mp3$|\.bin$/,
-        loader: ENV==='production' ? 'file?name=[path][name]_[hash:base64:4].[ext]' : 'url-loader',
+        loader: ENV === 'production' ? 'file?name=[path][name]_[hash:base64:4].[ext]' : 'url-loader',
         query: {
           name: '[name].[ext]?[hash:4]',
         },
       },
       // GLSL
       { test: /\.(glsl|frag|vert)$/, loader: 'raw-loader' },
-      { test: /\.(glsl|frag|vert)$/, loader: 'glslify-loader' }
-    ]
-} ,
+      { test: /\.(glsl|frag|vert)$/, loader: 'glslify-loader' },
+    ],
+  },
 
-	plugins: ([
+  plugins: ([
 
-		new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
 
-		new webpack.DefinePlugin({
-			'process.env.NODE_ENV': JSON.stringify(ENV)
-		}),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(ENV),
+    }),
 
-		new HtmlWebpackPlugin({
-			hash: true,
+    new HtmlWebpackPlugin({
+      hash: true,
       filename: 'index.html',
       template: 'index.template.ejs',
       inject: true,
-			googleAnalyticsID: ENV==='production' ? 'UA-XXXXXXXX-X' : 'UA-XXXXXXXX-X',
-			//FBAppId: ENV==='production' ? '' : '',
-			version: pkg.version,
-			chunksSortMode: 'dependency',
+      googleAnalyticsID: ENV === 'production' ? 'UA-XXXXXXXX-X' : 'UA-XXXXXXXX-X',
+      // FBAppId: ENV==='production' ? '' : '',
+      version: pkg.version,
+      chunksSortMode: 'dependency',
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -129,22 +129,22 @@ module.exports = {
       },
     }),
 
-	]).concat(ENV==='production' ? [
+  ]).concat(ENV === 'production' ? [
 
-		new webpack.optimize.CommonsChunkPlugin({
+    new webpack.optimize.CommonsChunkPlugin({
       names: ['vendors'],
     }),
 
-		// extract css into its own file
+    // extract css into its own file
     new ExtractTextPlugin('[name].[contenthash].css'),
 
     // This helps ensure the builds are consistent if source hasn't changed:
     new webpack.optimize.OccurrenceOrderPlugin(),
 
-		new webpack.LoaderOptionsPlugin({
+    new webpack.LoaderOptionsPlugin({
       minimize: true,
-			debug: false
-		}),
+      debug: false,
+    }),
 
     new UglifyJsPlugin({
       uglifyOptions: {
@@ -156,7 +156,7 @@ module.exports = {
 
     new CompressionPlugin(),
 
-		//new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
 
     // Generate a service worker script that will precache, and keep up to date,
     // the HTML & assets that are part of the Webpack build.
@@ -187,34 +187,34 @@ module.exports = {
       navigateFallbackWhitelist: [/^(?!\/__).*/],
       // Don't precache sourcemaps (they're large) and build asset manifest:
       staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
-    })
-	] : []).concat(ENV==='development' ? [
+    }),
+  ] : []).concat(ENV === 'development' ? [
 
-		new webpack.HotModuleReplacementPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
 
-		new webpack.NamedModulesPlugin(),
+    new webpack.NamedModulesPlugin(),
 
-	] : []),
+  ] : []),
 
-	devtool: ENV==='production' ? 'source-map' : 'cheap-module-eval-source-map',
+  devtool: ENV === 'production' ? 'source-map' : 'cheap-module-eval-source-map',
 
-	devServer: {
-		port: process.env.PORT || 8080,
-		host: '0.0.0.0',
-		publicPath: '/',
-		contentBase: ['./src', './static'],
-		historyApiFallback: true,
-		hot: true,  // enable HMR on the server
-		//https: {
-		//	key: fs.readFileSync('localhost.pem', 'utf8'),
-		//	cert: fs.readFileSync('localhost.pem', 'utf8')
-		//},
-		proxy: {
-			// OPTIONAL: proxy configuration:
-			// '/optional-prefix/**': { // path pattern to rewrite
-			//   target: 'http://target-host.com',
-			//   pathRewrite: path => path.replace(/^\/[^\/]+\//, '')   // strip first path segment
-			// }
-		}
-	}
+  devServer: {
+    port: process.env.PORT || 8080,
+    host: '0.0.0.0',
+    publicPath: '/',
+    contentBase: ['./src', './static'],
+    historyApiFallback: true,
+    hot: true, // enable HMR on the server
+    https: {
+      key: fs.readFileSync('server.key', 'utf8'),
+      cert: fs.readFileSync('server.crt', 'utf8'),
+    },
+    proxy: {
+      // OPTIONAL: proxy configuration:
+      // '/optional-prefix/**': { // path pattern to rewrite
+      //   target: 'http://target-host.com',
+      //   pathRewrite: path => path.replace(/^\/[^\/]+\//, '')   // strip first path segment
+      // }
+    },
+  },
 };

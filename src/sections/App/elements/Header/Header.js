@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 import styles from './Header.css';
@@ -9,7 +8,6 @@ import styles from './Header.css';
  */
 
 export default class Header extends Component {
-
   /**
    * render
    * @return {ReactElement} markup

@@ -15,16 +15,9 @@ import styles from './App.css';
  * App component
  */
 export default class App extends Component {
-
   static get propTypes() {
     return {
       windowResize: PropTypes.func.isRequired, // browser action
-    };
-  }
-
-  static get defaultProps() {
-    return {
-      windowResize: f => f,
     };
   }
 
@@ -51,7 +44,7 @@ export default class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/contact" component={Contact} />
-          <Route component={NotFound}/>
+          <Route component={NotFound} />
         </Switch>
       </section>
     );

@@ -5,6 +5,7 @@
   "main": "src/main.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
+    "lint-js": "eslint 'src/**/*.js'",
     "start": "http-server ./build --gzip --cors",
     "prestart": "npm run build",
     "build": "cross-env NODE_ENV=production webpack --progress",
@@ -51,7 +52,7 @@
     "enzyme": "^3.2.0",
     "eslint": "^4.12.1",
     "eslint-config-airbnb": "^16.1.0",
-    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-import-resolver-babel-module": "^4.0.0-beta.3",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",

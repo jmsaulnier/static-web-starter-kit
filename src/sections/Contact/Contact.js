@@ -7,7 +7,6 @@ import styles from './Contact.css';
  * ContactPage component
  */
 export default class Contact extends PureComponent {
-
   /**
    * render
    * @return {ReactElement} markup
