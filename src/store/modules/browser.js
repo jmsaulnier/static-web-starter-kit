@@ -1,3 +1,5 @@
+import createReducer from '../helpers/createReducer';
+
 export const RESIZE_WINDOW = '@BROWSER/RESIZE_WINDOW';
 
 const initialState = {
@@ -5,21 +7,13 @@ const initialState = {
   stageHeight: 0,
 };
 
-// Reducer
-export default function reducer(state = initialState, action = {}) {
-  switch (action.type) {
-    case RESIZE_WINDOW: {
-      const { stageWidth, stageHeight } = action.payload;
-      return {
-        ...state,
-        stageWidth,
-        stageHeight,
-      };
-    }
-    default:
-      return state;
-  }
-}
+export default createReducer(initialState, {
+  [RESIZE_WINDOW]: (state, { stageHeight, stageWidth }) => ({
+    ...state,
+    stageHeight,
+    stageWidth,
+  }),
+});
 
 // Actions
 export const windowResize = (stageWidth, stageHeight) => ({
