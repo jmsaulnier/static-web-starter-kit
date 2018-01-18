@@ -1,17 +1,10 @@
 @import 'normalize.css';
-@import '../../styles/fonts.css';
-@import '../../styles/helpers.css';
-@import '../../styles/variables.css';
-/**
-@import '../../styles/mediaqueries.css';
-@import '../../styles/animations.css';
-**/
 
 html,
 body,
-.App {
-  background-color: var(--palette-primary);
-  font-family: 'Roboto Condensed', sans-serif;
+.root {
+  background-color: $white;
+  font-family: $font;
   font-weight: 300;
 
   margin: 0;
@@ -19,5 +12,5 @@ body,
 }
 
 a {
-  color: var(--palette-secondary);
+  color: $blue;
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import { TweenLite } from 'gsap';
 
@@ -9,7 +9,7 @@ import styles from './Home.css';
 /**
  * Home section
  */
-export default class Home extends Component {
+export default class Home extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,6 +23,8 @@ export default class Home extends Component {
    * componentDidMount
    */
   async componentDidMount() {
+    TweenLite.set(this.$title, { opacity: 0, y: 5 });
+
     const result = await getStatus();
     console.log(result);
 
@@ -30,7 +32,7 @@ export default class Home extends Component {
   }
 
   animateIn() {
-    TweenLite.to(this.$title, 1, { opacity: 0 }).then(() => {
+    TweenLite.to(this.$title, 1, { opacity: 1, y: 0 }).then(() => {
       console.log('Done animating title');
     });
   }
@@ -41,7 +43,7 @@ export default class Home extends Component {
    */
   render() {
     return (
-      <section className={styles.Home}>
+      <section className={styles.root}>
         <h1 ref={(el) => { this.$title = el; }}>Allo!</h1>
         <p>You now have:</p>
         <ul>

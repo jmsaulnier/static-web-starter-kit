@@ -12,7 +12,7 @@ export default class NotFound extends PureComponent {
    */
   render() {
     return (
-      <section className={styles.NotFound}>
+      <section className={styles.root}>
         <h1>Doh! 404!</h1>
         <p>These are <em>not</em> the droids you are looking for!</p>
       </section>

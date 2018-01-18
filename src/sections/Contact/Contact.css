@@ -1,18 +1,15 @@
-@import '../../styles/variables.css';
-
-.Contact {
+.root {
   width: 100%;
   text-align: center;
-  color: var(--palette-tertiary);
+  color: $blue;
+}
 
-  .navigation {
-    padding: 2em 0 0 0;
-    text-align: center;
+.navigation {
+  padding: 2em 0 0 0;
+  text-align: center;
 
-    a {
-      color: var(--palette-secondary);
-      text-decoration: none;
-    }
+  a {
+    text-decoration: none;
   }
 }
 
