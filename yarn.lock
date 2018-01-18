@@ -1620,6 +1620,10 @@ commondir@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/commondir/-/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
 
+complex.js@2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/complex.js/-/complex.js-2.0.4.tgz#d8e7cfb9652d1e853e723386421c1a0ca7a48373"
+
 compressible@~2.0.11:
   version "2.0.12"
   resolved "https://registry.yarnpkg.com/compressible/-/compressible-2.0.12.tgz#c59a5c99db76767e9876500e271ef63b3493bd66"
@@ -2001,6 +2005,10 @@ debug@^3.0.1, debug@^3.1.0:
 decamelize@^1.0.0, decamelize@^1.1.1, decamelize@^1.1.2:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
+
+decimal.js@9.0.1:
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/decimal.js/-/decimal.js-9.0.1.tgz#1cc8b228177da7ab6498c1cc06eb130a290e6e1e"
 
 deep-equal@^1.0.1, deep-equal@~1.0.1:
   version "1.0.1"
@@ -3096,6 +3104,10 @@ form-data@~2.3.1:
 forwarded@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/forwarded/-/forwarded-0.1.2.tgz#98c23dab1175657b8c0573e8ceccd91b0ff18c84"
+
+fraction.js@4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.0.4.tgz#04e567110718adf7b52974a10434ab4c67a5183e"
 
 fresh@0.5.2:
   version "0.5.2"
@@ -4249,6 +4261,10 @@ istanbul-reports@^1.1.3:
   dependencies:
     handlebars "^4.0.3"
 
+javascript-natural-sort@0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/javascript-natural-sort/-/javascript-natural-sort-0.7.1.tgz#f9e2303d4507f6d74355a73664d1440fb5a0ef59"
+
 jest-changed-files@^20.0.3:
   version "20.0.3"
   resolved "https://registry.yarnpkg.com/jest-changed-files/-/jest-changed-files-20.0.3.tgz#9394d5cc65c438406149bef1bf4d52b68e03e3f8"
@@ -4846,6 +4862,18 @@ map-obj@^1.0.0, map-obj@^1.0.1:
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
   resolved "https://registry.yarnpkg.com/math-expression-evaluator/-/math-expression-evaluator-1.2.17.tgz#de819fdbcd84dccd8fae59c6aeb79615b9d266ac"
+
+mathjs@^3.17.0:
+  version "3.20.1"
+  resolved "https://registry.yarnpkg.com/mathjs/-/mathjs-3.20.1.tgz#cdefb0059ef897fe63fea39828e12041ac242765"
+  dependencies:
+    complex.js "2.0.4"
+    decimal.js "9.0.1"
+    fraction.js "4.0.4"
+    javascript-natural-sort "0.7.1"
+    seed-random "2.2.0"
+    tiny-emitter "2.0.2"
+    typed-function "0.10.6"
 
 md5.js@^1.3.4:
   version "1.3.4"
@@ -5768,6 +5796,12 @@ postcss-for@^2.1.1:
     postcss "^5.0.0"
     postcss-simple-vars "^2.0.0"
 
+postcss-hexrgba@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-hexrgba/-/postcss-hexrgba-1.0.0.tgz#b2ab6289221ddc7af400aae11d8c4ce8adffdd85"
+  dependencies:
+    postcss "^6.0.7"
+
 postcss-import@^11.0.0:
   version "11.0.0"
   resolved "https://registry.yarnpkg.com/postcss-import/-/postcss-import-11.0.0.tgz#a962e2df82d3bc5a6da6a386841747204f41ef5b"
@@ -5815,6 +5849,15 @@ postcss-loader@^2.0.9:
     postcss "^6.0.0"
     postcss-load-config "^1.2.0"
     schema-utils "^0.3.0"
+
+postcss-math@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/postcss-math/-/postcss-math-0.0.10.tgz#5140b32f46ee5e44d6ecb64fedcc633ae6a0a77f"
+  dependencies:
+    mathjs "^3.17.0"
+    postcss "^5.0.19"
+    postcss-message-helpers "^2.0.0"
+    reduce-function-call "^1.0.1"
 
 postcss-merge-idents@^2.1.5:
   version "2.1.7"
@@ -6019,7 +6062,7 @@ postcss-zindex@^2.0.1:
     postcss "^5.0.4"
     uniqs "^2.0.0"
 
-postcss@^5.0.0, postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.2, postcss@^5.0.21, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.6, postcss@^5.0.8, postcss@^5.2.16, postcss@^5.2.5:
+postcss@^5.0.0, postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.19, postcss@^5.0.2, postcss@^5.0.21, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.6, postcss@^5.0.8, postcss@^5.2.16, postcss@^5.2.5:
   version "5.2.18"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-5.2.18.tgz#badfa1497d46244f6390f58b319830d9107853c5"
   dependencies:
@@ -6035,6 +6078,14 @@ postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.11, postcss@^6.0.13, postcss@^6.0.1
     chalk "^2.3.0"
     source-map "^0.6.1"
     supports-color "^4.4.0"
+
+postcss@^6.0.7:
+  version "6.0.16"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.16.tgz#112e2fe2a6d2109be0957687243170ea5589e146"
+  dependencies:
+    chalk "^2.3.0"
+    source-map "^0.6.1"
+    supports-color "^5.1.0"
 
 prelude-ls@~1.1.2:
   version "1.1.2"
@@ -6780,6 +6831,10 @@ schema-utils@^0.3.0:
   dependencies:
     ajv "^5.0.0"
 
+seed-random@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/seed-random/-/seed-random-2.2.0.tgz#2a9b19e250a817099231a5b99a4daf80b7fbed54"
+
 select-hose@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/select-hose/-/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"
@@ -7256,6 +7311,12 @@ supports-color@^4.0.0, supports-color@^4.2.1, supports-color@^4.4.0:
   dependencies:
     has-flag "^2.0.0"
 
+supports-color@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-5.1.0.tgz#058a021d1b619f7ddf3980d712ea3590ce7de3d5"
+  dependencies:
+    has-flag "^2.0.0"
+
 svgo@^0.7.0:
   version "0.7.2"
   resolved "https://registry.yarnpkg.com/svgo/-/svgo-0.7.2.tgz#9f5772413952135c6fefbf40afe6a4faa88b4bb5"
@@ -7438,6 +7499,10 @@ timers-browserify@^2.0.4:
   dependencies:
     setimmediate "^1.0.4"
 
+tiny-emitter@2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-2.0.2.tgz#82d27468aca5ade8e5fd1e6d22b57dd43ebdfb7c"
+
 title-case@^2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/title-case/-/title-case-2.1.1.tgz#3e127216da58d2bc5becf137ab91dae3a7cd8faa"
@@ -7519,6 +7584,10 @@ type-is@~1.6.15:
   dependencies:
     media-typer "0.3.0"
     mime-types "~2.1.15"
+
+typed-function@0.10.6:
+  version "0.10.6"
+  resolved "https://registry.yarnpkg.com/typed-function/-/typed-function-0.10.6.tgz#314aa0ea72bd586de5920095559683e20b01688b"
 
 typedarray@^0.0.6:
   version "0.0.6"

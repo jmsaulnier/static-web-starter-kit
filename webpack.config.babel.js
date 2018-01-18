@@ -205,10 +205,12 @@ module.exports = {
     contentBase: ['./src', './static'],
     historyApiFallback: true,
     hot: true, // enable HMR on the server
+    /**
     https: {
       key: fs.readFileSync('server.key', 'utf8'),
       cert: fs.readFileSync('server.crt', 'utf8'),
     },
+    */
     proxy: {
       // OPTIONAL: proxy configuration:
       // '/optional-prefix/**': { // path pattern to rewrite

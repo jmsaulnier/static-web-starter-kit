@@ -1,18 +1,31 @@
-@import '../../../../styles/variables.css';
-
-.Header {
+.root {
   width: 100%;
   height: 80px;
   width: 100%;
   text-align: center;
-  color: #000;
-  background: url("/assets/images/yeoman.png") var(--palette-tertiary) no-repeat 5px 5px;
+  background: url("/assets/images/yeoman.png") $blue no-repeat 5px 5px;
 
-  ul {
+  nav {
     position: absolute;
     top: 2em;
     right: 1em;
+
+  }
+
+  .hamburgerIcon {
+    display: none;
+
+    @media (--s-screen) {
+      display: block;
+    }
+  }
+
+  ul {
     list-style-type: none;
+
+    @media (--s-screen) {
+      display: none;
+    }
   }
 
   li {
@@ -21,10 +34,12 @@
 
     a {
       text-decoration: none;
-    }
-
-    .isActive {
-      font-weight: bold;
+      color: $white;
     }
   }
 }
+
+.isActive {
+  font-weight: bold;
+}
+
