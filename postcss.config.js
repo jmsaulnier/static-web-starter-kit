@@ -19,7 +19,7 @@ module.exports = {
     require('postcss-random'),
     require('postcss-simple-vars')({
       variables: function variables() {
-        return require('./src/styles/variables');
+        return require('./src/styles/theme');
       },
       unknown: function unknown(node, name, result) {
         node.warn(result, 'Unknown variable ' + name)

@@ -1,10 +1,14 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 
+import Theme from 'src/styles/theme';
+
+import IconCheck from 'src/components/Icons/Check';
+
 import styles from './Contact.css';
 
 /**
- * ContactPage component
+ * Contact component
  */
 export default class Contact extends PureComponent {
   /**
@@ -14,7 +18,7 @@ export default class Contact extends PureComponent {
   render() {
     return (
       <section className={styles.root}>
-        <h2> Contact section!</h2>
+        <h2><IconCheck width="20px" color={Theme.blue} /> Contact section!</h2>
         <aside className={styles.navigation}>
           <Link to="/">← Back</Link>
         </aside>
