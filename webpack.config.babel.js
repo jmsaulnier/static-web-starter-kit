@@ -109,6 +109,7 @@ module.exports = {
 
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(ENV),
+      __DEVELOPMENT__: process.env.NODE_ENV === 'development',
     }),
 
     new HtmlWebpackPlugin({
@@ -117,7 +118,25 @@ module.exports = {
       template: 'index.template.ejs',
       inject: true,
       googleAnalyticsID: ENV === 'production' ? 'UA-XXXXXXXX-X' : 'UA-XXXXXXXX-X',
-      // FBAppId: ENV==='production' ? '' : '',
+      ENV: process.env.NODE_ENV,
+      version: pkg.version,
+      chunksSortMode: 'dependency',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+        // more options:
+        // https://github.com/kangax/html-minifier#options-quick-reference
+      },
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      filename: '200.html',
+      template: 'index.template.ejs',
+      inject: true,
+      googleAnalyticsID: ENV === 'production' ? 'UA-XXXXXXXX-X' : 'UA-XXXXXXXX-X',
+      ENV: process.env.NODE_ENV,
       version: pkg.version,
       chunksSortMode: 'dependency',
       minify: {

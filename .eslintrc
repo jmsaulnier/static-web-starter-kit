@@ -13,7 +13,8 @@
       "fetch": true,
       "setInterval": true,
       "setTimeout": true,
-      "window": true
+      "window": true,
+      "__DEVELOPMENT__": true
   },
   "extends": [
     "airbnb"

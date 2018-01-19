@@ -9,7 +9,7 @@ const history = createHistory();
 const configureStore = () => {
   let store;
 
-  if (process.env.NODE_ENV === 'development') {
+  if (__DEVELOPMENT__) {
     const enhancer = compose(
       applyMiddleware(thunk),
       window.devToolsExtension ? window.devToolsExtension() : f => f,
@@ -20,7 +20,7 @@ const configureStore = () => {
     store = middleware(createStore)(reducers);
   }
 
-  if (process.env.NODE_ENV !== 'production') {
+  if (__DEVELOPMENT__) {
     if (module.hot) {
       module.hot.accept(
         './reducers',

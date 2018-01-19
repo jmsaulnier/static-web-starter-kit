@@ -23,7 +23,7 @@ domready(() => {
     document.getElementById('app'),
   );
 
-  if (process.env.NODE_ENV !== 'production') {
+  if (__DEVELOPMENT__) {
     if (module.hot) {
       module.hot.accept();
     }
