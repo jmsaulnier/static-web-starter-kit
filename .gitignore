@@ -4,5 +4,7 @@ build
 localhost.pem
 .DS_Store
 .vscode
+server.crt
+server.key
 .idea
 *-debug.log

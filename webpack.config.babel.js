@@ -113,7 +113,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       filename: 'index.html',
       template: 'index.template.ejs',
       inject: true,
@@ -131,7 +131,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       filename: '200.html',
       template: 'index.template.ejs',
       inject: true,
@@ -180,6 +180,7 @@ module.exports = {
     // Generate a service worker script that will precache, and keep up to date,
     // the HTML & assets that are part of the Webpack build.
     new SWPrecacheWebpackPlugin({
+      cacheId: 'static-web-starter-kit',
       // By default, a cache-busting query parameter is appended to requests
       // used to populate the caches, to ensure the responses are fresh.
       // If a URL is already hashed by Webpack, then there is no concern
@@ -224,12 +225,10 @@ module.exports = {
     contentBase: ['./src', './static'],
     historyApiFallback: true,
     hot: true, // enable HMR on the server
-    /**
     https: {
       key: fs.readFileSync('server.key', 'utf8'),
       cert: fs.readFileSync('server.crt', 'utf8'),
     },
-    */
     proxy: {
       // OPTIONAL: proxy configuration:
       // '/optional-prefix/**': { // path pattern to rewrite
