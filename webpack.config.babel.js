@@ -7,6 +7,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import SWPrecacheWebpackPlugin from 'sw-precache-webpack-plugin';
+import OpenBrowserPlugin from 'open-browser-webpack-plugin';
 
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
@@ -147,6 +148,8 @@ module.exports = {
         // https://github.com/kangax/html-minifier#options-quick-reference
       },
     }),
+
+    new OpenBrowserPlugin({ url: 'https://localhost:8080' }),
 
   ]).concat(ENV === 'production' ? [
 
